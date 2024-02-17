@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الأمان السيبراني</title>
+    <style>
+        /* الألوان */
+        :root {
+            --primary-color: #001f3f; /* لون أزرق داكن */
+            --secondary-color: #ffffff; /* لون أبيض */
+            --correct-color: #4CAF50; /* لون أخضر */
+            --incorrect-color: #FF0000; /* لون أحمر */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #001f3f;
+            direction: rtl;
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #001f3f;
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        p {
+            line-height: 1.6;
+        }
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #001f3f;
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #001a35;
+        }
+        .correct-answer {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .incorrect-answer {
+            color: var(--incorrect-color);
+            font-weight: bold;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>اختبار الأمان السيبراني</h1>
+    </header>
+
+    <!-- سؤال 1 -->
+    <section>
+        <h2>1. التحقق من رسالة البريد الإلكتروني</h2>
+        <p>لقد تلقيت للتو رسالة البريد الإلكتروني أدناه وتشك في أنها قد تكون رسالة نصية تصيد احتيالية. ما الذي يمكنك فعله للتحقق؟</p>
+        <form>
+            <label>
+                <input type="radio" name="answer1" value="a"> فتح الرسالة والنقر على الروابط المرفقة للتحقق من المحتوى.
+            </label>
+            <label class="correct-answer">
+                <input type="radio" name="answer1" value="b"> تجاهل الرسالة تمامًا وعدم فتحها.
+            </label>
+            <label>
+                <input type="radio" name="answer1" value="c"> الاتصال بالشخص المرسل للتأكد من صحة الرسالة.
+            </label>
+            <label>
+                <input type="radio" name="answer1" value="d"> تحميل المرفقات الموجودة في الرسالة لفحصها.
+            </label>
+            <button type="button" onclick="checkAnswer(this, 'feedback1')">تحقق</button>
+            <div id="feedback1" class="feedback"></div>
+        </form>
+    </section>
+
+    <!-- سؤال 2 -->
+    <section>
+        <h2>2. مشاركة خطط العمل</h2>
+        <p>أحد الزملاء يريدك أن ترسل له خطط العمل إلى بريده الإلكتروني الشخصي لأنه لا يستطيع الدخول إلى بريده الإلكتروني المخصص للعمل. كيف ينبغي لك التصرف؟</p>
+        <form>
+            <label class="correct-answer">
+                <input type="radio" name="answer2" value="a"> تقديم خطط العمل مباشرة عبر البريد الإلكتروني الشخصي للزميل.
+            </label>
+            <label>
+                <input type="radio" name="answer2" value="b"> طلب من الزميل استخدام بريده الإلكتروني الرسمي للعمل للحصول على الوثائق.
+            </label>
+            <label>
+                <input type="radio" name="answer2" value="c"> إرسال خطط العمل عبر رسالة نصية على الهاتف المحمول للزميل.
+            </label>
+            <label>
+                <input type="radio" name="answer2" value="d"> تجاهل طلب الزميل للحفاظ على أمان المعلومات.
+            </label>
+            <button type="button" onclick="checkAnswer(this, 'feedback2')">تحقق</button>
+            <div id="feedback2" class="feedback"></div>
+        </form>
+    </section>
+
+    <!-- سؤال 3 -->
+    <section>
+        <h2>3. مكالمة من رقم غير معروف</h2>
+        <p>تتلقى مكالمة هاتفية من رقم غير معروف وتشك في أنها محاولة هندسة اجتماعية (فن اختراق العقول). ما الذي يجب عليك فعله؟</p>
+        <form>
+            <label>
+                <input type="radio" name="answer3" value="a"> الرد على المكالمة وتقديم المعلومات المطلوبة.
+            </label>
+            <label class="correct-answer">
+                <input type="radio" name="answer3" value="b"> تجاهل المكالمة وعدم الرد على الأرقام غير المعروفة.
+            </label>
+            <label>
+                <input type="radio" name="answer3" value="c"> الرد على المكالمة والتحدث بحذر دون تقديم معلومات حساسة.
+            </label>
+            <label>
+                <input type="radio" name="answer3" value="d"> طلب من الشخص ترك رسالة صوتية والاتصال به لاحقًا.
+            </label>
+            <button type="button" onclick="checkAnswer(this, 'feedback3')">تحقق</button>
+            <div id="feedback3" class="feedback"></div>
+        </form>
+    </section>
+
+    <!-- سؤال 4 -->
+    <section>
+        <h2>4. السلوك الأمني المناسب</h2>
+        <p>ما هو السلوك الأمني المناسب الذي يجب عليك اتباعه عند التعامل مع بيانات الشركة؟</p>
+        <form>
+            <label>
+                <input type="radio" name="answer4" value="a"> مشاركة البيانات مع الزملاء عند الطلب دون التحقق من صلاحياتهم.
+            </label>
+            <label class="correct-answer">
+                <input type="radio" name="answer4" value="b"> الابتعاد عن مشاركة المعلومات الحساسة والتحقق من صلاحيات الأفراد قبل مشاركة أي بيانات.
+            </label>
+            <label>
+                <input type="radio" name="answer4" value="c"> نسخ البيانات على محرك USB للعمل بها من المنزل.
+            </label>
+            <label>
+                <input type="radio" name="answer4" value="d"> حفظ معلومات الشركة على الحاسوب الشخصي بدلاً من الخادم المؤمن.
+            </label>
+            <button type="button" onclick="checkAnswer(this, 'feedback4')">تحقق</button>
+            <div id="feedback4" class="feedback"></div>
+        </form>
+    </section>
+
+    <!-- سؤال 5 -->
+    <section>
+        <h2>5. برنامج جديد غير متوفر في قاعدة البيانات</h2>
+        <p>إذا كنت بحاجة إلى برنامج جديد ولكنه غير متوفر في قواعد البيانات المعتمدة من الشركة، ما الطريقة التي ينبغي لك بها المتابعة؟</p>
+        <form>
+            <label>
+                <input type="radio" name="answer5" value="a"> تثبيت البرنامج من مصدر غير معروف دون التحقق من صلاحياته.
+            </label>
+            <label class="correct-answer">
+                <input type="radio" name="answer5" value="b"> طلب إضافة البرنامج إلى قاعدة البيانات الرسمية والانتظار حتى يتمتع بالموافقة.
+            </label>
+            <label>
+                <input type="radio" name="answer5" value="c"> استخدام نسخة قديمة من البرنامج من مواقع الويب غير المعتمدة.
+            </label>
+            <label>
+                <input type="radio" name="answer5" value="d"> مشاركة البرنامج مع الزملاء دون التحقق من سياسات الشركة.
+            </label>
+            <button type="button" onclick="checkAnswer(this, 'feedback5')">تحقق</button>
+            <div id="feedback5" class="feedback"></div>
+        </form>
+    </section>
+
+    <script>
+        function checkAnswer(element, feedbackId) {
+            // الحصول على القيمة المحددة
+            var selectedAnswer = element.parentElement.querySelector('input:checked');
+            var feedbackElement = document.getElementById(feedbackId); // العنصر الذي يتبع الزر
+
+            // التحقق من الإجابة الصحيحة (قيمة b)
+            if (selectedAnswer && selectedAnswer.parentElement.classList.contains('correct-answer')) {
+                selectedAnswer.parentElement.classList.add('correct-answer');
+                feedbackElement.innerHTML = 'كفو عليك';
+            } else {
+                selectedAnswer.parentElement.classList.add('incorrect-answer');
+                feedbackElement.innerHTML = 'حاول مرة أخرى';
+            }
+        }
+    </script>
+
+</body>
+</html>
